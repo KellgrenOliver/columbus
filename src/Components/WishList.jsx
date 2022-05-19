@@ -39,14 +39,14 @@ const WishList = () => {
   return (
     <>
       <Container>
-        <h1>Wish list</h1>
+        {wishList && <h1>Wish list</h1>}
         {wishList?.length <= 0 && <span>Your wish list is emty.</span>}
         {wishList?.map((product, i) => (
           <Name key={i} onClick={() => deleteProductFromWishList(product)}>
             {product?.name}
           </Name>
         ))}
-        <h1>Total Price: {sum} :-</h1>
+        {wishList && <h1>Total Price: {sum} :-</h1>}
       </Container>
       <Toaster position="top-right" />
     </>
